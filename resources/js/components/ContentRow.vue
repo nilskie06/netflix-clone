@@ -1,19 +1,25 @@
 <template>
   <div class="content-row">
-    <h3 class="row-title">{{ category.title }}</h3>
+    <div class="row-header">
+      <div class="line"></div>
+      <h3 class="row-title">{{ category.title }}</h3>
+      <span class="row-count">{{ category.items.length }} items</span>
+    </div>
     <div class="row-slider" ref="slider">
-      <div class="row-poster" v-for="item in category.items" :key="item.id"
-           @click="$emit('select', item)">
+      <div class="row-poster" v-for="item in category.items" :key="item.id" @click="$emit('select', item)">
         <img :src="item.thumbnail" :alt="item.title" loading="lazy">
-        <div class="poster-info">
-          <h4>{{ item.title }}</h4>
-          <div class="poster-meta">
-            <span class="match">{{ item.match }}%</span>
-            <span class="year">{{ item.year }}</span>
-            <span class="rating">{{ item.rating }}</span>
+        <div class="poster-overlay">
+          <div class="poster-info">
+            <h4>{{ item.title }}</h4>
+            <div class="poster-meta">
+              <span class="match">{{ item.match }}%</span>
+              <span class="year">{{ item.year }}</span>
+              <span class="rating">{{ item.rating }}</span>
+            </div>
+            <div class="poster-genre">{{ item.genre }}</div>
           </div>
-          <div class="poster-genre">{{ item.genre }}</div>
         </div>
+        <div class="poster-glow"></div>
       </div>
     </div>
   </div>
@@ -25,5 +31,6 @@ export default {
   props: {
     category: { type: Object, required: true },
   },
+  emits: ['select'],
 };
 </script>
