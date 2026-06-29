@@ -6,6 +6,7 @@
     <title>Netflix Clone</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
     <link rel="stylesheet" href="{{ asset('build/assets/app-BqljZIzg.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-Ce6hKsP2.css') }}">
 </head>
 <body>
     <div id="app"></div>
